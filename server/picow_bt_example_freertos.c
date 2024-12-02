@@ -19,7 +19,8 @@
 
 #define TEST_TASK_PRIORITY				( tskIDLE_PRIORITY + 2UL )
 #define BLINK_TASK_PRIORITY				( tskIDLE_PRIORITY + 1UL )
-
+//this is the local var
+int count = 0;
 int btstack_main(int argc, const char * argv[]);
 static btstack_packet_callback_registration_t hci_event_callback_registration;
 
@@ -28,12 +29,22 @@ static void packet_handler(uint8_t packet_type, uint16_t channel, uint8_t *packe
     UNUSED(channel);
     bd_addr_t local_addr;
     if (packet_type != HCI_EVENT_PACKET) return;
+    
     switch(hci_event_packet_get_type(packet)){
+            
         case BTSTACK_EVENT_STATE:
             if (btstack_event_state_get_state(packet) != HCI_STATE_WORKING) return;
             gap_local_bd_addr(local_addr);
+            sleep_ms(5000);
             printf("BTstack up and running on %s.\n", bd_addr_to_str(local_addr));
             break;
+        case BTSTACK_EVENT_NR_CONNECTIONS_CHANGED:
+            if(btstack_event_nr_connections_changed_get_number_connections(packet) != count){
+                count++;
+                printf("New connection count: %d\n",count % 2);
+            }
+            break;
+
         default:
             break;
     }
