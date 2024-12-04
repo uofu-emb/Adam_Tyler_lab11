@@ -223,6 +223,7 @@ static uint16_t att_read_callback(hci_con_handle_t connection_handle, uint16_t a
         return att_read_callback_handle_blob((const uint8_t *)counter_string, counter_string_len, offset, buffer, buffer_size);
     }
     if (att_handle == ATT_CHARACTERISTIC_ORG_BLUETOOTH_CHARACTERISTIC_TEMPERATURE_CELSIUS_01_VALUE_HANDLE){
+        printf("the temp value is %i C \n", (uint16_t)temperature_poll()*100);
         return (uint16_t)(temperature_poll()*100);
     }
     return 0;
@@ -263,6 +264,10 @@ int btstack_main(void);
 int btstack_main(void)
 {
     le_counter_setup();
+    //this is the setup function it is needed because it sets up the ADC for
+    //Reading the Temp sensor, reading the value in the ADC, and it sets up
+    //the sensor to read the value.
+    temperature_setup();
 
     // turn on!
 	hci_power_control(HCI_POWER_ON);

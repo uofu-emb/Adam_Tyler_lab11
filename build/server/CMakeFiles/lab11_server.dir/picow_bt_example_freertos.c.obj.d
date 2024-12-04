@@ -222,4 +222,5 @@ server/CMakeFiles/lab11_server.dir/picow_bt_example_freertos.c.obj: \
  /Users/tyler/.pico-sdk/sdk/2.0.0/lib/cyw43-driver/src/cyw43_country.h \
  /Users/tyler/.pico-sdk/sdk/2.0.0/src/rp2_common/pico_async_context/include/pico/async_context.h \
  /Users/tyler/.pico-sdk/sdk/2.0.0/src/rp2_common/pico_cyw43_arch/include/pico/cyw43_arch/arch_freertos.h \
- /Users/tyler/Documents/fall2024/ECE5785-adv_emb/lab11/lab113/Adam_Tyler_lab11/include/picow_bt_example_common.h
+ /Users/tyler/Documents/fall2024/ECE5785-adv_emb/lab11/lab113/Adam_Tyler_lab11/include/picow_bt_example_common.h \
+ /Users/tyler/Documents/fall2024/ECE5785-adv_emb/lab11/lab113/Adam_Tyler_lab11/include/temp_sense.h
