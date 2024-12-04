@@ -148,6 +148,11 @@ static int  counter = 0;
 static char counter_string[30];
 static int  counter_string_len;
 
+static int  data = 0;
+static char data_string[30];
+static int  data_string_len;
+
+
 static void beat(void){
     counter++;
     counter_string_len = snprintf(counter_string, sizeof(counter_string), "BTstack counter %04u", counter);
@@ -223,11 +228,11 @@ static uint16_t att_read_callback(hci_con_handle_t connection_handle, uint16_t a
         return att_read_callback_handle_blob((const uint8_t *)counter_string, counter_string_len, offset, buffer, buffer_size);
     }
     if (att_handle == ATT_CHARACTERISTIC_ORG_BLUETOOTH_CHARACTERISTIC_TEMPERATURE_CELSIUS_01_VALUE_HANDLE){
-        uint8_t data = (uint8_t)temperature_poll()*100;
+        data = (uint16_t)temperature_poll()*100;
         printf("the temp value is %i C \n", data);
-
+        data_string_len = snprintf(data_string, sizeof(data_string), data);
         //return (uint16_t)(temperature_poll()*100);
-        att_read_callback_handle_blob((const uint8_t *)data, counter_string_len, offset, buffer, buffer_size);
+        att_read_callback_handle_blob((const uint8_t *)data_string, data_string_len, offset, buffer, buffer_size);
     }
     return 0;
 }
