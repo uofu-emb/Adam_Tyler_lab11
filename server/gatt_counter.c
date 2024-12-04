@@ -223,8 +223,11 @@ static uint16_t att_read_callback(hci_con_handle_t connection_handle, uint16_t a
         return att_read_callback_handle_blob((const uint8_t *)counter_string, counter_string_len, offset, buffer, buffer_size);
     }
     if (att_handle == ATT_CHARACTERISTIC_ORG_BLUETOOTH_CHARACTERISTIC_TEMPERATURE_CELSIUS_01_VALUE_HANDLE){
-        printf("the temp value is %i C \n", (uint16_t)temperature_poll()*100);
-        return (uint16_t)(temperature_poll()*100);
+        uint8_t data = (uint8_t)temperature_poll()*100;
+        printf("the temp value is %i C \n", data);
+
+        //return (uint16_t)(temperature_poll()*100);
+        att_read_callback_handle_blob((const uint8_t *)data, counter_string_len, offset, buffer, buffer_size);
     }
     return 0;
 }
