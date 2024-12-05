@@ -440,6 +440,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/tyler/Documents/fall2024/ECE5785-adv_emb/lab11/lab113/Adam_Tyler_lab11/lib/freertos/timers.c" "server/CMakeFiles/lab11_server.dir/__/lib/freertos/timers.c.obj" "gcc" "server/CMakeFiles/lab11_server.dir/__/lib/freertos/timers.c.obj.d"
   "/Users/tyler/Documents/fall2024/ECE5785-adv_emb/lab11/lab113/Adam_Tyler_lab11/server/gatt_counter.c" "server/CMakeFiles/lab11_server.dir/gatt_counter.c.obj" "gcc" "server/CMakeFiles/lab11_server.dir/gatt_counter.c.obj.d"
   "/Users/tyler/Documents/fall2024/ECE5785-adv_emb/lab11/lab113/Adam_Tyler_lab11/server/picow_bt_example_freertos.c" "server/CMakeFiles/lab11_server.dir/picow_bt_example_freertos.c.obj" "gcc" "server/CMakeFiles/lab11_server.dir/picow_bt_example_freertos.c.obj.d"
+  "/Users/tyler/Documents/fall2024/ECE5785-adv_emb/lab11/lab113/Adam_Tyler_lab11/server/temp_sense.c" "server/CMakeFiles/lab11_server.dir/temp_sense.c.obj" "gcc" "server/CMakeFiles/lab11_server.dir/temp_sense.c.obj.d"
   "/Users/tyler/.pico-sdk/sdk/2.0.0/src/rp2_common/pico_cxx_options/new_delete.cpp" "server/CMakeFiles/lab11_server.dir/Users/tyler/.pico-sdk/sdk/2.0.0/src/rp2_common/pico_cxx_options/new_delete.cpp.obj" "gcc" "server/CMakeFiles/lab11_server.dir/Users/tyler/.pico-sdk/sdk/2.0.0/src/rp2_common/pico_cxx_options/new_delete.cpp.obj.d"
   )
 
